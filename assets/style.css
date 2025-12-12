@@ -1,0 +1,27 @@
+/* ======================================
+   Paleta oficial da marca - CyberSec
+
+   Darkest Purple:   #460073
+   Dark Purple:      #7500C0
+   Core Purple:      #A100FF
+   Light Purple:     #C2A3FF
+   Lightest Purple:  #E6DCFF
+====================================== */
+
+:root {
+  --darkest-purple: #460073;
+  --dark-purple: #7500C0;
+  --core-purple: #A100FF;
+  --light-purple: #C2A3FF;
+  --lightest-purple: #E6DCFF;
+
+  --text-color: #1c1c1c;
+  --font-primary: 'Segoe UI', 'Roboto', sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-primary);
+  background-color: var(--lightest-purple);
+  color: var(--text-color);
+}
