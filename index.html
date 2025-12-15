@@ -9,7 +9,7 @@
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
       background-color: #E6DCFF;
-      overflow-x: scroll;
+      overflow-x: auto;
       padding: 20px;
     }
 
@@ -17,10 +17,10 @@
       display: grid;
       grid-template-columns: 150px repeat(6, 200px);
       gap: 16px;
-      align-items: start;
     }
 
     .level-label {
+      grid-row: span 6;
       writing-mode: vertical-lr;
       transform: rotate(180deg);
       font-weight: bold;
@@ -29,20 +29,21 @@
       background-color: #C2A3FF;
       color: #460073;
       border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .column-header {
       text-align: center;
       font-weight: bold;
       color: #7500C0;
-      margin-bottom: 16px;
+      margin-bottom: 12px;
     }
 
     .block {
-      background-color: #A100FF;
       color: white;
       padding: 10px;
-      margin-bottom: 12px;
       border-radius: 6px;
       text-align: center;
       font-size: 0.9rem;
@@ -54,20 +55,54 @@
 
     .block:hover {
       transform: scale(1.05);
-      background-color: #7500C0;
     }
 
+    /* Cores */
     .soft { background-color: #A100FF; }
     .ot { background-color: #000000; }
     .network { background-color: #233554; }
     .os { background-color: #7500C0; }
     .security { background-color: #112240; }
     .thinking { background-color: #64FFDA; color: #000; }
+
+    /* Legenda */
+    .legend-box {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: white;
+      border-radius: 10px;
+      padding: 16px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      font-size: 14px;
+      color: #000;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .color-box {
+      width: 14px;
+      height: 14px;
+      margin-right: 8px;
+      border-radius: 4px;
+    }
+
+    .soft-box { background-color: #A100FF; }
+    .ot-box { background-color: #000000; }
+    .network-box { background-color: #233554; }
+    .os-box { background-color: #7500C0; }
+    .security-box { background-color: #112240; }
+    .thinking-box { background-color: #64FFDA; }
   </style>
 </head>
 <body>
+
   <div class="grid">
-    <!-- Top headers -->
+    <!-- Cabeçalhos -->
     <div></div>
     <div class="column-header">Soft Skills</div>
     <div class="column-header">OT Concepts</div>
@@ -79,31 +114,48 @@
     <!-- CL12 & CL13 -->
     <div class="level-label">CL12 & CL13</div>
 
-    <!-- Soft Skills -->
+    <!-- Linha 1 -->
     <a href="https://accenture.percipio.com/channels/62dc4420-e719-11e6-9835-f723b46a2688?tab=WATCH" class="block soft" target="_blank">Fundamentos de Comunicação</a>
-    <a href="https://accenture.percipio.com/channels/2ff8cb90-f921-11e6-aad2-6b3c03be7fe8?tab=WATCH" class="block soft" target="_blank">Atendimento ao Cliente</a>
-    <a href="https://accenture.percipio.com/channels/f1215f10-f91e-11e6-aad2-6b3c03be7fe8?tab=WATCH" class="block soft" target="_blank">Comunicação Oral</a>
-
-    <!-- OT Concepts -->
     <a href="https://academy.nozominetworks.com/operational-technology-for-it-people" class="block ot" target="_blank">Basics of OT</a>
-
-    <!-- Networking -->
     <a href="https://accenture.percipio.com/courses/4550fd29-0e69-11e7-b952-0242c0a80b07/videos/4550fd2a-0e69-11e7-b952-0242c0a80b07" class="block network" target="_blank">Network Concepts</a>
-    <a href="https://accenture.percipio.com/courses/d0eaa404-cd35-4ebf-a136-757b9966024a/videos/e492e070-cffb-4aa1-8706-49bd38d09b4d" class="block network" target="_blank">Infraestrutura</a>
-
-    <!-- OS -->
     <a href="https://accenture.percipio.com/courses/48185696-b6a5-4fe6-9905-290d2fa731b5/videos/4eb17e57-1686-4ce8-81bb-a1d8995adbe7" class="block os" target="_blank">Windows/Linux</a>
-
-    <!-- Cybersecurity -->
     <a href="https://accenture.percipio.com/courses/46ae82f4-cdde-44de-8c94-9844ffffd094/videos/316a1108-61c8-4e40-a169-5423c59515a2" class="block security" target="_blank">Security Goals</a>
-    <a href="https://accenture.percipio.com/courses/c5630ece-7ed7-4f17-9bee-d114f85e4f2b/videos/8bb97d0c-5ed7-4a59-b348-ce34f9b35a60" class="block security" target="_blank">Security Concepts</a>
-    <a href="https://accenture.percipio.com/linked-contents/3032d33e-cd19-44a9-9297-eda7224c1dd5/landing" class="block security" target="_blank">Labs: Security Env</a>
-    <a href="https://accenture.percipio.com/linked-contents/881ba591-d581-4872-ae5a-e259c5725489/landing" class="block security" target="_blank">Labs: Access Mgmt</a>
-
-    <!-- Critical Thinking -->
     <a href="https://accenture.percipio.com/channels/f220ddf0-2150-11e7-a947-2bfd699dcbff?tab=WATCH" class="block thinking" target="_blank">Pensamento Crítico</a>
+
+    <!-- Linha 2 -->
+    <a href="https://accenture.percipio.com/channels/2ff8cb90-f921-11e6-aad2-6b3c03be7fe8?tab=WATCH" class="block soft" target="_blank">Atendimento ao Cliente</a>
+    <div></div>
+    <a href="https://accenture.percipio.com/courses/d0eaa404-cd35-4ebf-a136-757b9966024a/videos/e492e070-cffb-4aa1-8706-49bd38d09b4d" class="block network" target="_blank">Infraestrutura</a>
+    <div></div>
+    <a href="https://accenture.percipio.com/courses/c5630ece-7ed7-4f17-9bee-d114f85e4f2b/videos/8bb97d0c-5ed7-4a59-b348-ce34f9b35a60" class="block security" target="_blank">Security Concepts</a>
     <a href="https://accenture.percipio.com/channels/4c8e4c00-2061-11e7-a06b-196ddb80a7e9?tab=WATCH" class="block thinking" target="_blank">Tomada de Decisões</a>
 
+    <!-- Linha 3 -->
+    <a href="https://accenture.percipio.com/channels/f1215f10-f91e-11e6-aad2-6b3c03be7fe8?tab=WATCH" class="block soft" target="_blank">Comunicação Oral</a>
+    <div></div>
+    <div></div>
+    <div></div>
+    <a href="https://accenture.percipio.com/linked-contents/3032d33e-cd19-44a9-9297-eda7224c1dd5/landing" class="block security" target="_blank">Labs: Security Env</a>
+    <div></div>
+
+    <!-- Linha 4 -->
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <a href="https://accenture.percipio.com/linked-contents/881ba591-d581-4872-ae5a-e259c5725489/landing" class="block security" target="_blank">Labs: Access Mgmt</a>
+    <div></div>
   </div>
+
+  <!-- LEGENDA -->
+  <div class="legend-box">
+    <div class="legend-item"><div class="color-box soft-box"></div> Soft Skills</div>
+    <div class="legend-item"><div class="color-box ot-box"></div> OT Concepts</div>
+    <div class="legend-item"><div class="color-box network-box"></div> Networking</div>
+    <div class="legend-item"><div class="color-box os-box"></div> Operating Systems</div>
+    <div class="legend-item"><div class="color-box security-box"></div> Cybersecurity</div>
+    <div class="legend-item"><div class="color-box thinking-box"></div> Critical Thinking</div>
+  </div>
+
 </body>
 </html>
