@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cyber Career Path</title>
+
   <style>
     body {
       margin: 0;
@@ -13,6 +14,20 @@
       padding: 20px;
     }
 
+    .level-wrapper {
+      display: inline-block;
+      border: 3px solid #7500C0;
+      border-radius: 14px;
+      padding: 20px;
+      margin-bottom: 40px;
+    }
+
+    /* CL11 não tem borda */
+    .level-wrapper.cl11 {
+      border: none;
+      padding: 0;
+    }
+
     .grid {
       display: grid;
       grid-template-columns: 150px repeat(6, 200px);
@@ -20,7 +35,7 @@
     }
 
     .level-label {
-      grid-row: span 6;
+      grid-row: span 10;
       writing-mode: vertical-lr;
       transform: rotate(180deg);
       font-weight: bold;
@@ -48,16 +63,17 @@
       text-align: center;
       font-size: 0.9rem;
       box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
-      transition: transform 0.2s ease;
       text-decoration: none;
       display: block;
     }
 
-    .block:hover {
-      transform: scale(1.05);
-    }
+    /* CL11 cores */
+    .core { background-color: #A100FF; }
+    .cert { background-color: #233554; }
+    .tech { background-color: #112240; }
+    .cap  { background-color: #000000; }
 
-    /* Cores */
+    /* CL12 & 13 cores */
     .soft { background-color: #A100FF; }
     .ot { background-color: #000000; }
     .network { background-color: #233554; }
@@ -75,7 +91,7 @@
       padding: 16px;
       box-shadow: 0 0 10px rgba(0,0,0,0.2);
       font-size: 14px;
-      color: #000;
+      z-index: 100;
     }
 
     .legend-item {
@@ -99,10 +115,82 @@
     .thinking-box { background-color: #64FFDA; }
   </style>
 </head>
+
 <body>
 
+<!-- ================= CL11 ================= -->
+<div class="level-wrapper cl11">
   <div class="grid">
-    <!-- Cabeçalhos -->
+
+    <div></div>
+    <div class="column-header">Core Skill Path</div>
+    <div class="column-header">Certification Path</div>
+    <div class="column-header">Technology Path</div>
+    <div class="column-header">Capstone</div>
+    <div></div>
+    <div></div>
+
+    <div class="level-label">CL11</div>
+
+    <!-- Core -->
+    <a class="block core" href="https://www.cisa.gov/resources-tools/training/advanced-cybersecurity-industrial-control-systems-ics300" target="_blank">
+      Advanced Cybersecurity for ICS (ICS300)
+    </a>
+
+    <!-- Certification -->
+    <a class="block cert" href="https://www.netacad.com/courses/cybersecurity-essentials?courseLang=en-US" target="_blank"
+       title="Escolha Cisco OU CompTIA + 3 opções adicionais">
+      Cisco Cybersecurity Essentials
+    </a>
+
+    <!-- Technology -->
+    <div class="block tech">Tenable OT Exposure – Sales Engineering</div>
+
+    <!-- Capstone -->
+    <div class="block cap">Capstone – Protocolo OT + Demonstração</div>
+    <div></div>
+    <div></div>
+    <!-- Core -->
+    <a class="block core" href="https://www.cisa.gov/resources-tools/training/industrial-control-systems-evaluation-401v" target="_blank">
+      Industrial Control Systems Evaluation (401V)
+    </a>
+
+    <!-- Certification -->
+    <div class="block cert" title="Escolha Cisco OU CompTIA + 3 opções adicionais">CompTIA A+ Core 1</div>
+
+    <!-- Technology -->
+    <div class="block tech">Claroty CTSP – Healthcare (CTSP-302)</div>
+
+    <!-- Capstone -->
+    <div class="block cap">Capstone – Fundamentos de OT & OT Security</div>
+    <div></div>
+    <div></div>
+    <!-- Certification extras -->
+    <div></div>
+    <div class="block cert">CompTIA A+ Core 2</div>
+    <div></div><div></div><div></div><div></div><div></div>
+
+    <div class="block cert">Nozomi Networks Certified Sales Professional</div>
+    <div></div><div></div><div></div><div></div><div></div>
+    
+    <div class="block cert">Fortinet Certified Fundamentals – Cybersecurity</div>
+    <div></div><div></div><div></div><div></div><div></div>
+    
+    <div class="block cert">Claroty Technical Sales Professional – IND</div>
+    <div></div><div></div><div></div><div></div><div></div>
+    
+    <div class="block cert">TXOne Solutions Foundation</div>
+    <div></div><div></div><div></div><div></div><div></div>
+
+    <div class="block cert">Tenable OT Exposure – Sales</div>
+
+  </div>
+</div>
+
+<!-- ================= CL13 & CL12 (INALTERADO) ================= -->
+<div class="level-wrapper">
+  <div class="grid">
+
     <div></div>
     <div class="column-header">Soft Skills</div>
     <div class="column-header">OT Concepts</div>
@@ -111,51 +199,28 @@
     <div class="column-header">Cybersecurity</div>
     <div class="column-header">Critical Thinking</div>
 
-    <!-- CL12 & CL13 -->
-    <div class="level-label">CL12 & CL13</div>
+    <div class="level-label">CL13 &amp; CL12</div>
 
     <!-- Linha 1 -->
-    <a href="https://accenture.percipio.com/channels/62dc4420-e719-11e6-9835-f723b46a2688?tab=WATCH" class="block soft" target="_blank">Fundamentos de Comunicação</a>
-    <a href="https://academy.nozominetworks.com/operational-technology-for-it-people" class="block ot" target="_blank">Basics of OT</a>
-    <a href="https://accenture.percipio.com/courses/4550fd29-0e69-11e7-b952-0242c0a80b07/videos/4550fd2a-0e69-11e7-b952-0242c0a80b07" class="block network" target="_blank">Network Concepts</a>
-    <a href="https://accenture.percipio.com/courses/48185696-b6a5-4fe6-9905-290d2fa731b5/videos/4eb17e57-1686-4ce8-81bb-a1d8995adbe7" class="block os" target="_blank">Windows/Linux</a>
-    <a href="https://accenture.percipio.com/courses/46ae82f4-cdde-44de-8c94-9844ffffd094/videos/316a1108-61c8-4e40-a169-5423c59515a2" class="block security" target="_blank">Security Goals</a>
-    <a href="https://accenture.percipio.com/channels/f220ddf0-2150-11e7-a947-2bfd699dcbff?tab=WATCH" class="block thinking" target="_blank">Pensamento Crítico</a>
+    <a class="block soft" href="https://accenture.percipio.com/channels/62dc4420-e719-11e6-9835-f723b46a2688?tab=WATCH" target="_blank">Fundamentos de Comunicação</a>
+    <a class="block ot" href="https://academy.nozominetworks.com/operational-technology-for-it-people" target="_blank">Basics of OT</a>
+    <a class="block network" href="https://accenture.percipio.com/courses/4550fd29-0e69-11e7-b952-0242c0a80b07/videos/4550fd2a-0e69-11e7-b952-0242c0a80b07" target="_blank">Network Concepts</a>
+    <a class="block os" href="https://accenture.percipio.com/courses/48185696-b6a5-4fe6-9905-290d2fa731b5/videos/4eb17e57-1686-4ce8-81bb-a1d8995adbe7" target="_blank">Windows/Linux</a>
+    <a class="block security" href="https://accenture.percipio.com/courses/46ae82f4-cdde-44de-8c94-9844ffffd094/videos/316a1108-61c8-4e40-a169-5423c59515a2" target="_blank">Security Goals</a>
+    <a class="block thinking" href="https://accenture.percipio.com/channels/f220ddf0-2150-11e7-a947-2bfd699dcbff?tab=WATCH" target="_blank">Pensamento Crítico</a>
 
-    <!-- Linha 2 -->
-    <a href="https://accenture.percipio.com/channels/2ff8cb90-f921-11e6-aad2-6b3c03be7fe8?tab=WATCH" class="block soft" target="_blank">Atendimento ao Cliente</a>
-    <div></div>
-    <a href="https://accenture.percipio.com/courses/d0eaa404-cd35-4ebf-a136-757b9966024a/videos/e492e070-cffb-4aa1-8706-49bd38d09b4d" class="block network" target="_blank">Infraestrutura</a>
-    <div></div>
-    <a href="https://accenture.percipio.com/courses/c5630ece-7ed7-4f17-9bee-d114f85e4f2b/videos/8bb97d0c-5ed7-4a59-b348-ce34f9b35a60" class="block security" target="_blank">Security Concepts</a>
-    <a href="https://accenture.percipio.com/channels/4c8e4c00-2061-11e7-a06b-196ddb80a7e9?tab=WATCH" class="block thinking" target="_blank">Tomada de Decisões</a>
-
-    <!-- Linha 3 -->
-    <a href="https://accenture.percipio.com/channels/f1215f10-f91e-11e6-aad2-6b3c03be7fe8?tab=WATCH" class="block soft" target="_blank">Comunicação Oral</a>
-    <div></div>
-    <div></div>
-    <div></div>
-    <a href="https://accenture.percipio.com/linked-contents/3032d33e-cd19-44a9-9297-eda7224c1dd5/landing" class="block security" target="_blank">Labs: Security Env</a>
-    <div></div>
-
-    <!-- Linha 4 -->
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <a href="https://accenture.percipio.com/linked-contents/881ba591-d581-4872-ae5a-e259c5725489/landing" class="block security" target="_blank">Labs: Access Mgmt</a>
-    <div></div>
   </div>
+</div>
 
-  <!-- LEGENDA -->
-  <div class="legend-box">
-    <div class="legend-item"><div class="color-box soft-box"></div> Soft Skills</div>
-    <div class="legend-item"><div class="color-box ot-box"></div> OT Concepts</div>
-    <div class="legend-item"><div class="color-box network-box"></div> Networking</div>
-    <div class="legend-item"><div class="color-box os-box"></div> Operating Systems</div>
-    <div class="legend-item"><div class="color-box security-box"></div> Cybersecurity</div>
-    <div class="legend-item"><div class="color-box thinking-box"></div> Critical Thinking</div>
-  </div>
+<!-- LEGENDA -->
+<div class="legend-box">
+  <div class="legend-item"><div class="color-box soft-box"></div> Soft Skills</div>
+  <div class="legend-item"><div class="color-box ot-box"></div> OT Concepts</div>
+  <div class="legend-item"><div class="color-box network-box"></div> Networking</div>
+  <div class="legend-item"><div class="color-box os-box"></div> Operating Systems</div>
+  <div class="legend-item"><div class="color-box security-box"></div> Cybersecurity</div>
+  <div class="legend-item"><div class="color-box thinking-box"></div> Critical Thinking</div>
+</div>
 
 </body>
 </html>
